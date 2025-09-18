@@ -38,56 +38,29 @@ h1 {
     font-size: 1.3em;
 }
 
-video {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* video wrapper and overlay */
+/* video wrapper */
 .video-wrapper {
     position: relative;
     width: 100%;
 }
 
-.video-wrapper video {
-    display: block;
+.video-wrapper iframe {
     width: 100%;
-    height: auto;
+    aspect-ratio: 16/9;
     border-radius: 10px;
 }
 
-.play-overlay {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.6);
-    color: #fff;
-    border: none;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    font-size: 28px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-}
 
-.play-overlay:active {
-    transform: translate(-50%, -50%) scale(0.98);
-}
 
-/* hide native controls visually until play */
-.video-wrapper video::-internal-media-controls-overlay-cast-button,
-.video-wrapper video::-webkit-media-controls-panel {
-    display: none !important;
-}
 
-/* Responsive tweaks */
-@media (max-width: 600px) {
+
+@media (max-width: 900px) {
     h1 { font-size: 1.6rem; margin-top: 20px }
-    .play-overlay { width: 56px; height: 56px; font-size: 22px }
     .video-box { padding: 14px }
+    .videos-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 16px;
+    }
 }
