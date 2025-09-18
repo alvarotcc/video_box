@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('acetss/desktop-wallpaper-moon-background-for-computer-moon-for-moon-drawing.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 3.5em;
+    text-shadow: 2px 2px 8px #000;
+}
+
+.videos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin: 40px auto;
+    width: min(1100px, 95%);
+}
+
+.video-box {
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-box h2 {
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* video wrapper and overlay */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.video-wrapper video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.play-overlay {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: none;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    font-size: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+
+.play-overlay:active {
+    transform: translate(-50%, -50%) scale(0.98);
+}
+
+/* hide native controls visually until play */
+.video-wrapper video::-internal-media-controls-overlay-cast-button,
+.video-wrapper video::-webkit-media-controls-panel {
+    display: none !important;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    h1 { font-size: 1.6rem; margin-top: 20px }
+    .play-overlay { width: 56px; height: 56px; font-size: 22px }
+    .video-box { padding: 14px }
+}
